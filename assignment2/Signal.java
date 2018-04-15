@@ -1,6 +1,5 @@
 package assignment2;
 
-import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.Timer;
 
@@ -14,11 +13,7 @@ public class Signal {
 	public Signal() {
 		theSampler = new DefaultSampler();
 		theObservers = new ArrayList<SignalObserver>();
-		Timer t = new Timer(SAMPLING, new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				nextValue(theSampler.read());
-			}
-		});
+		Timer t = new Timer(SAMPLING, e -> nextValue(theSampler.read()));
 		t.start();
 	}
 	
