@@ -3,12 +3,15 @@ package assignment2;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 import java.util.ArrayList;
 
 /**
   A class for displaying the model as a column of textfields in a frame.
 */
-public class TextFrame extends JFrame
+public class TextFrame extends JFrame implements ChangeListener
 {
    /**
       Constructs a JFrame that contains the textfields containing the data
@@ -64,6 +67,15 @@ public class TextFrame extends JFrame
       pack();
       setVisible(true);
    }
+   
+   public void stateChanged(ChangeEvent e) {
+		ArrayList<Double> a = dataModel.getData();
+		int i = 0;
+		for(Double v : a) {
+			fieldList[i].setText(v.toString());
+			i++;
+		}
+	}
 
    DataModel dataModel;
    JTextField[] fieldList;
