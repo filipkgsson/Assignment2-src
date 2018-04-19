@@ -12,6 +12,7 @@ public class ImagePresenter extends Presenter {
 	private BufferedImage img;
 	private JLabel label;
 	private String[] filenames;
+	private int count = -1;
 	
 	public void setFilenames(String[] fn) {
 		filenames = fn;
@@ -23,7 +24,7 @@ public class ImagePresenter extends Presenter {
 		} catch (IOException e) {
 			throw new RuntimeException("File could not be opened");
 		}
-		label = createCenterComponent();
+		//label = createCenterComponent();
 		label.setIcon(new ImageIcon(img));
 		label.repaint();
 	}
@@ -35,14 +36,17 @@ public class ImagePresenter extends Presenter {
 	}
 
 	public void eastButtonPressed() {
-		String temp = ;
-		
-		showImage(filenames[i]);
-		
+		count ++;
+		if(count == filenames.length)
+			count --;
+		showImage(filenames[count]);
 	}
 
 	public void westButtonPressed() {
-		i++;
+		count --;
+		if(count < 0)
+			count = 0;
+		showImage(filenames[count]);
 	}
 
 	public void actionPerformed(ActionEvent e) {
