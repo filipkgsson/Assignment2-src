@@ -21,9 +21,3 @@ public abstract class Presenter extends JApplet implements ActionListener{
 	public abstract void westButtonPressed();
 	
 }
-
-/*
-The classes that are a part of the framework is Presenter.
-The application programmer needs to define the createCenterComponent, northButtonPressed, eastButtonPressed,
-southButtonPressed and westButtonPressed methods in order to create a complete application.
-*/

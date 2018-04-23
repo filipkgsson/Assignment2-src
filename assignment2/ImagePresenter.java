@@ -85,9 +85,3 @@ public class ImagePresenter extends Presenter {
 			eastButtonPressed();
 	}
 }
-
-/*
- * We have defined the constructor ImagePresenter, setFilenames, setText, showImage, createCenterComponent, eastButtonPressed,
- * westButtonPressed, getImageLabel, showText, setButton and setLabel in the file ImagePresenter.java.
- * We have defined the file PresenterFrame.java
- */
