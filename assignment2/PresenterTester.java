@@ -16,6 +16,7 @@ public class PresenterTester {
 		PresenterFrame pf = new PresenterFrame(p);
 		String[] filenames = {"1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"};
 		((ImagePresenter)p).setFilenames(filenames);
+		((ImagePresenter)p).setText(filenames);
 		pf.setVisible(true);
 	}
 	

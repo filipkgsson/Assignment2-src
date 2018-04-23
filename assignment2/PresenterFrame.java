@@ -23,7 +23,15 @@ public class PresenterFrame extends JFrame{
 					p.eastButtonPressed();
 			}
 		});
-		//east.addActionListener(p);
+		west.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if((e.getSource()).equals(buttons[0]))
+					p.westButtonPressed();
+				else
+					p.eastButtonPressed();
+			}
+		});
+		//west.addActionListener(p);
 		p.setButtons(buttons);
 		JLabel label = new JLabel();
 		label.setPreferredSize(new Dimension(100, 200));
@@ -33,7 +41,7 @@ public class PresenterFrame extends JFrame{
 		panel.add(east);
 		panel.add(label);
 		setLayout(new BorderLayout());
-		add(p.createCenterComponent(), BorderLayout.NORTH);
+		add(((ImagePresenter)p).getImageLabel(), BorderLayout.NORTH);
 		add(panel, BorderLayout.SOUTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//frame.setVisible(true);
