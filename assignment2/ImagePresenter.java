@@ -9,11 +9,14 @@ import javax.swing.*;
 
 public class ImagePresenter extends Presenter {
 
+	private static final long serialVersionUID = 1L;
 	private BufferedImage img;
 	private JLabel imagelabel;
 	private String[] filenames;
 	private String[] texts;
+	private JButton[] buttons;
 	private int count = -1;
+	private JLabel label;
 	
 	public ImagePresenter() {
 		imagelabel = createCenterComponent();
@@ -25,6 +28,18 @@ public class ImagePresenter extends Presenter {
 	
 	public void setText(String[] s) {
 		texts = s;
+	}
+	
+	public void setLabel(JLabel l) {
+		label = l;
+	}
+	
+	public void setButtons(JButton[] b) {
+		buttons = b;
+	}
+	
+	public void showText(String text) {
+		label.setText(text);
 	}
 	
 	public void showImage(String filename){
@@ -64,13 +79,15 @@ public class ImagePresenter extends Presenter {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		
+		if((e.getSource()).equals(buttons[0]))
+			westButtonPressed();
+		else
+			eastButtonPressed();
 	}
 }
 
 /*
  * We have defined the constructor ImagePresenter, setFilenames, setText, showImage, createCenterComponent, eastButtonPressed,
- * westButtonPressed and getImageLabel in the file ImagePresenter.java.
- * In the file Presenter.java we have defined showText, setButton and setLabel.
+ * westButtonPressed, getImageLabel, showText, setButton and setLabel in the file ImagePresenter.java.
  * We have defined the file PresenterFrame.java
  */

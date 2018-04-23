@@ -1,13 +1,6 @@
 package assignment2;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.Dimension;
 
 public class PresenterTester {
 
@@ -17,6 +10,7 @@ public class PresenterTester {
 		String[] filenames = { "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg" };
 		((ImagePresenter) p).setFilenames(filenames);
 		((ImagePresenter) p).setText(filenames);
+		pf.setSize(new Dimension(500,500));
 		pf.setVisible(true);
 	}
 }
