@@ -47,7 +47,6 @@ public class ImagePresenter extends Presenter {
 		count ++;
 		if(count == filenames.length)
 			count --;
-		//System.out.println(count);
 		showText(texts[count]);
 		showImage(filenames[count]);
 	}
@@ -56,7 +55,6 @@ public class ImagePresenter extends Presenter {
 		count --;
 		if(count < 0)
 			count = 0;
-		//System.out.println(count);
 		showText(texts[count]);
 		showImage(filenames[count]);
 	}
